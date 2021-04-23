@@ -1,7 +1,9 @@
 
 namespace GradeCalculator{
     public abstract class Entity{
-        public string Guid {get; protected set;} = "";
+        public int Version {get; private set;} = 1;
+        public string Guid {get; set;} = "";
         public string Name {get; set;} = "";
+        public bool isActive {get; set;} = true;
     }
 }

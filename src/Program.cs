@@ -13,7 +13,7 @@ namespace GradeCalculator
             Application app = new Application("org.grade_calculator.grade_calculator", GLib.ApplicationFlags.None);
             app.Register(GLib.Cancellable.Current);
 
-            MainWindow mainWindow = new MainWindow();
+            MainWindow mainWindow = new MainWindow(new GradeManager());
             app.AddWindow(mainWindow);
 
             mainWindow.Show();

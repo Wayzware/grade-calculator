@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace GradeCalculator{
     
@@ -6,14 +7,11 @@ namespace GradeCalculator{
 
         protected string Instructor {get; set;} = "";
 
-        private Category[] Categories;
+        public Dictionary<string, Category> Categories {get; protected set;}
 
-        Course(){
+        public Course(){
             Guid = System.Guid.NewGuid().ToString();
-            Categories = new Category[]{};
-        }
-        Course(string json){
-
+            Categories = new Dictionary<string, Category>();
         }
 
     }

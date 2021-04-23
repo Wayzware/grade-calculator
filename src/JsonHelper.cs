@@ -21,6 +21,8 @@ namespace GradeCalculator{
         public static bool SaveData(IEnumerable<Entity> data, string jsonFilePath, bool alerts = true){
             return true;
         }
+
     }
+
 
 }
