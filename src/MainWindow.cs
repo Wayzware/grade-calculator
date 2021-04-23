@@ -5,13 +5,13 @@ using UI = Gtk.Builder.ObjectAttribute;
 namespace GradeCalculator{
     class MainWindow : Window{
 
-        private int _counter;
+        private readonly GradeManager gradeManager;
 
-        public MainWindow() : this(new Builder("MainWindow.glade")) { }
+        public MainWindow(GradeManager gradeManager) : this(new Builder("MainWindow.glade"), gradeManager) { }
 
-        private MainWindow(Builder builder) : base(builder.GetRawOwnedObject("MainWindow")){
+        private MainWindow(Builder builder, GradeManager gradeManager) : base(builder.GetRawOwnedObject("MainWindow")){
             builder.Autoconnect(this);
-
+            this.gradeManager = gradeManager;
             DeleteEvent += Window_DeleteEvent;  
         }
 

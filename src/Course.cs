@@ -1,18 +1,19 @@
 using System;
-using Guid;
 
 namespace GradeCalculator{
     
-    public class Course{
+    public class Course : Entity{
 
-        protected string guid {get;}
-        protected string name {get; set;}
+        protected string Instructor {get; set;} = "";
+
+        private Category[] Categories;
 
         Course(){
-
+            Guid = System.Guid.NewGuid().ToString();
+            Categories = new Category[]{};
         }
         Course(string json){
-            
+
         }
 
     }
