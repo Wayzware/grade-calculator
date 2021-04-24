@@ -1,0 +1,5 @@
+/Users/jacobrice/repos/grade-calculator/obj/Debug/net5.0/grade-calculator.csprojAssemblyReference.cache
+/Users/jacobrice/repos/grade-calculator/obj/Debug/net5.0/grade-calculator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jacobrice/repos/grade-calculator/obj/Debug/net5.0/grade-calculator.AssemblyInfoInputs.cache
+/Users/jacobrice/repos/grade-calculator/obj/Debug/net5.0/grade-calculator.AssemblyInfo.cs
+/Users/jacobrice/repos/grade-calculator/obj/Debug/net5.0/grade-calculator.csproj.CoreCompileInputs.cache

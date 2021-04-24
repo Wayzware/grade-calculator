@@ -1,8 +1,7 @@
 
 namespace GradeCalculator{
     public struct JsonDataHolder{
-        public Assignment[] Assignments;
-        public Category[] Categories;
+        public int releaseVersion;
         public Course[] Courses;
     }
 }

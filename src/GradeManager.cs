@@ -18,38 +18,34 @@ namespace GradeCalculator{
             Courses = new Dictionary<string, Course>();
         }
 
+        /// <summary>
+        /// Loads data from the given json into the class's Courses dictionary. 
+        /// </summary>
         public bool LoadData(string jsonFilePath){
             JsonDataHolder data;
             try{
-                data = JsonSerializer.Serialize<JsonDataHolder>(jsonFilePath);
+                data = JsonSerializer.Deserialize<JsonDataHolder>(jsonFilePath);
             }
             catch{
                 (new MessageBox("Could not save the data file to " + jsonFilePath, "Error")).Show();
                 return false;
             }
-            List<Course> courses = data.Courses;
-
+            Course[] courses = data.Courses;
+            Courses = new Dictionary<string, Course>();
+            foreach(Course course in courses){
+                if(!Courses.ContainsKey(course.Guid)) Courses.Add(course.Guid, course);
+            }
+            return true;
         }
 
         public bool SaveData(string jsonFilePath){
             List<Course> courses = new List<Course>(Courses.Count);
-            List<Assignment> assignments = new List<Assignment>();
-            List<Category> categories = new List<Category>();
 
-            foreach(Course course in Courses.Values){
-                courses.Add(course);
-                foreach(Category category in course.Categories.Values){
-                    categories.Add(category);
-                    foreach(Assignment assignment in category.Assignments.Values){
-                        assignments.Add(assignment);
-                    }
-                }
-            }
+            foreach(Course course in Courses.Values) courses.Add(course);
 
             JsonDataHolder data = new JsonDataHolder{
-                Courses = courses.ToArray(),
-                Categories = categories.ToArray(),
-                Assignments = assignments.ToArray()
+                releaseVersion = 1,
+                Courses = courses.ToArray()
             };
 
             JsonSerializerOptions jOptions = new JsonSerializerOptions{
