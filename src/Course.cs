@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace GradeCalculator{
     
@@ -15,6 +16,9 @@ namespace GradeCalculator{
             Categories = new Dictionary<string, Category>();
             GradingScale = new GradeScale();
         }
+
+        public double GetGradePercent() => Categories.Values.Aggregate(0.0, (total, next) => total += next.isActive ? next.GetGradePercent() : 0.0);
+        public string GetGradeLetter() => GradingScale.GetGrade(GetGradePercent());
         
 
     }

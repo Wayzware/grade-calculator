@@ -10,13 +10,13 @@ namespace GradeCalculator{
         public Dictionary<string, Assignment> Assignments {get; protected set;}
         public double worth;
         
-        public double GetValue(){
+        public double GetGradeValue(){
             double pointsEarned = GetPointsEarned();
             double pointsPossible = GetPointsPossible();
             return pointsPossible == 0 ? 0 : worth * pointsEarned / pointsPossible;
         }
 
-        public double GetPercent(){
+        public double GetGradePercent(){
             double pointsEarned = GetPointsEarned();
             double pointsPossible = GetPointsPossible();
             return pointsPossible == 0 ? 0 : pointsEarned / pointsPossible;
