@@ -94,7 +94,7 @@
                       </packing>
                     </child>
                     <child>
-                      <!-- n-columns=4 n-rows=2 -->
+                      <!-- n-columns=5 n-rows=2 -->
                       <object class="GtkGrid" id="ValueGrid">
                         <property name="visible">True</property>
                         <property name="can-focus">False</property>
@@ -123,30 +123,6 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">% of Total</property>
-                            <property name="width-chars">8</property>
-                          </object>
-                          <packing>
-                            <property name="left-attach">2</property>
-                            <property name="top-attach">0</property>
-                          </packing>
-                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="visible">True</property>
-                            <property name="can-focus">False</property>
-                            <property name="label" translatable="yes">Contrib to Total</property>
-                            <property name="width-chars">13</property>
-                          </object>
-                          <packing>
-                            <property name="left-attach">3</property>
-                            <property name="top-attach">0</property>
-                          </packing>
-                        </child>
-                        <child>
                           <object class="GtkEntry" id="NewPointsEarnedEntry">
                             <property name="visible">True</property>
                             <property name="can-focus">True</property>
@@ -167,13 +143,15 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkEntry" id="NewPercentOfTotalEntry">
+                          <object class="GtkLabel">
                             <property name="visible">True</property>
-                            <property name="can-focus">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Contrib to Total</property>
+                            <property name="width-chars">13</property>
                           </object>
                           <packing>
-                            <property name="left-attach">2</property>
-                            <property name="top-attach">1</property>
+                            <property name="left-attach">4</property>
+                            <property name="top-attach">0</property>
                           </packing>
                         </child>
                         <child>
@@ -183,7 +161,52 @@
                             <property name="editable">False</property>
                           </object>
                           <packing>
+                            <property name="left-attach">4</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">Category % of Total</property>
+                            <property name="width-chars">8</property>
+                          </object>
+                          <packing>
                             <property name="left-attach">3</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="NewPercentOfTotalEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">3</property>
+                            <property name="top-attach">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="label" translatable="yes">%</property>
+                            <property name="width-chars">11</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
+                            <property name="top-attach">0</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkEntry" id="NewPercentEntry">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="editable">False</property>
+                          </object>
+                          <packing>
+                            <property name="left-attach">2</property>
                             <property name="top-attach">1</property>
                           </packing>
                         </child>
